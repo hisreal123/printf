@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 
-void print(const char *format, int *numOfchar)
+void function_print(const char *format, int *numOfchar)
 {
     if (*format != '%'){
 

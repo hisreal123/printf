@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
-* print_char - Printf function
+* function_char - Printf function
 * @numOfchar: input
 * @argList: input
 * Return: Printed chars
