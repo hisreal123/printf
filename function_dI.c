@@ -8,8 +8,15 @@
 */
 void function_dI(const char *format, int *numOfchar)
 {
-if (*format == 'd' || *format == 'i')
-{
-numOfchar += write(1, format, 1);
-}
+    // if (*format == 'd' || *format == 'i')
+    // {
+    //     size_t i = 0;
+
+    //     while ( i <= strlen(format))
+    //     {
+    //         const void result = format[i];
+    //         numOfchar += write(1, result, 1);
+    //         i++;
+    //     }
+    // }
 }
