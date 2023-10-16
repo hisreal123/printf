@@ -80,18 +80,28 @@ int _printf(const char *format, ...)
         {
             format++;
 
-            print_dI(format, &numOfchar);
+            if (*format == 'd' || *format == 'i'){
+                numOfchar += write (1, format, 1);
+            }
 
             if (*format == '\0')
                 break;
             if (*format == '%')
             {
-                print_percent(format, &numOfchar);
+               write(1, format, 1);
+               numOfchar++;
             }
             else if (*format == 'c')
-                print_char(argList, &numOfchar);
+            {
+                char c = va_arg(argList, int);
+                numOfchar  += write(1, &c, 1);
+            }
             else if (*format == 's')
-                print_string(argList, &numOfchar);
+            {
+                char *st = va_arg(argList, char *);
+                int st_len = strlen(st);
+                numOfchar = numOfchar + write(1, st, st_len);
+            }
         }
         format++;
     }
