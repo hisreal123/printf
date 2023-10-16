@@ -3,6 +3,13 @@
 
 void print(const char *format, int *numOfchar)
 {
-    numOfchar += write(1, format, 1);
-    // printf("%d\n", numOfchar);
+    if (*format != '%'){
+
+        write(1, &format, 1);
+
+        if (*format != '\n')
+        {
+            numOfchar++;
+        }
+    }
 }
