@@ -4,7 +4,7 @@
 
 int main ()
 {
-    int numOfchar;
+
     int num = 42;
 
     _printf("%c\n", 'c');
