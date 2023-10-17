@@ -6,11 +6,7 @@
 
 
 int _printf(const char *format, ...);
-void function_char(va_list argList, int *numOfchar);
-void function_string(va_list argList, int *numOfchar);
-void function_percent(const char *format, int *numOfchar);
-void function_print(const char *format, int *numOfchar);
-void function_dI(va_list argList, int *numOfchar);
 int _itoa(int num, char *buffer);
+void conversion_spec(const char *format, va_list argList, int *numOfchar);
 
 #endif
