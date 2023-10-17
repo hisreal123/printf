@@ -10,7 +10,7 @@
 int _itoa_binary(int num, char *buffer)
 {
 	int i, left, right = 0;
-
+	char temp;
 	do {
 		buffer[i++] = (num & 1) + '0';
 		num >>= 1;

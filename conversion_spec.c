@@ -26,7 +26,7 @@ void conversion_spec(const char *format, va_list argList, int *numOfchar)
 
 	if (*format == 's')
 	{
-		*st = va_arg(argList, char *);
+		st = va_arg(argList, char *);
 		st_len = strlen(st);
 
 		*numOfchar += write(1, st, st_len);
