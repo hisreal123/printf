@@ -19,7 +19,8 @@ void _itoa(int num, char *buffer)
 	}	while (num > 0);
 
 	if (is_neg)
-	{	buffer[i++] = '-';
+	{
+		buffer[i++] = '-';
 	}
 
 	left = 0;
