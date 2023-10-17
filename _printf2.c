@@ -16,7 +16,8 @@ void _itoa(int num, char *buffer)
 	do {
 		buffer[i++] = num % 10 + '0';
 		num /= 10;
-	}	while (num > 0);
+	}
+	while (num > 0);
 
 	if (is_neg)
 	{	buffer[i++] = '-';
@@ -39,7 +40,7 @@ void _itoa(int num, char *buffer)
 
 void conversion_spec(char format, va_list argList, int *numOfchar)
 {
-	
+
 }
 /**
  * _printf - Printf function
