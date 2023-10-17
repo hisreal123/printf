@@ -31,30 +31,12 @@ int _printf(const char *format, ...)
             if (*format == 'd' || *format == 'i')
             {
                 int num = va_arg(argList, int);
-                char num_str[50];
-                int len = 0;
-                int i = len;
-                int temp = num;
-
-                if (num < 0)
+                if (num != 0)
                 {
-                    write(1, "-", 1);
-                    num = -num;
-                    numOfchar++;
+                    argList = argList / 10;
+                    putchr(argList + '0');
                 }
 
-                while (temp != 0)
-                {
-                    num_str[len++] = (temp % 10) + '0';
-                    temp /= 100;
-                }
-
-
-                while (i >= 0)
-                {
-                    write(1, &num_str, 1);
-                    i--;
-                }
             }
 
             if (*format == '\0')
