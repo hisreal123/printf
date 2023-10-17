@@ -7,6 +7,7 @@
 
 int _printf(const char *format, ...);
 int _itoa(int num, char *buffer);
+int _itoa_binary(int num, char *buffer);
 void conversion_spec(const char *format, va_list argList, int *numOfchar);
 
 #endif

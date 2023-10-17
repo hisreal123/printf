@@ -1,5 +1,5 @@
 CC = gcc -Wall -Werror -Wextra -pedantic -std=gnu89
-BIN = _printf
+IN = _printf
 SRCS = _printf.c main.c
 OBJS = $(SRCS:.c = .o)
 
