@@ -11,6 +11,6 @@ void function_string(va_list argList, int *numOfchar);
 void function_percent(const char *format, int *numOfchar);
 void function_print(const char *format, int *numOfchar);
 void function_dI(va_list argList, int *numOfchar);
-void _itoa(int num, char *buffer);
+int _itoa(int num, char *buffer);
 
 #endif

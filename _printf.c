@@ -1,7 +1,14 @@
 #include <stdio.h>
 #include "main.h"
 
-void _itoa(int num, char *buffer)
+/**
+ * _itoa - function to print number string
+ * @num: number
+ * @buffer: buffer
+ * Return: length of numbers
+ */
+
+int _itoa(int num, char *buffer)
 {
 	int i = 0;
 	int is_neg = 0;
@@ -36,18 +43,27 @@ void _itoa(int num, char *buffer)
 		right--;
 	}
 	buffer[i] = '\0';
-	}
+	return (i);
+}
+
+/**
+ * conversion_spec - function to select specifier
+ * @format: specifier tag
+ * @argList: position of va pointer
+ * @numOfchar: length of characters
+ * Return: empty
+ */
 
 void conversion_spec(const char *format, va_list argList, int *numOfchar)
 {
 	if (*format == '%')
-		numOfchar = numOfchar + write(1, format, 1);
+		*numOfchar += write(1, format, 1);
 
 	if (*format == 'c')
 	{
 		char c = va_arg(argList, int);
 
-		numOfchar = numOfchar + write(1, &c, 1);
+		*numOfchar += write(1, &c, 1);
 	}
 
 	if (*format == 's')
@@ -55,7 +71,7 @@ void conversion_spec(const char *format, va_list argList, int *numOfchar)
 		char *st = va_arg(argList, char *);
 		int st_len = strlen(st);
 
-		numOfchar = numOfchar + write(1, st, st_len);
+		*numOfchar += write(1, st, st_len);
 	}
 
 	if (*format == 'd' || *format == 'i')
@@ -64,10 +80,9 @@ void conversion_spec(const char *format, va_list argList, int *numOfchar)
 		char buffer[12];
 		int len;
 
-		_itoa(num, buffer);
-		len = strlen(buffer);
+		len = _itoa(num, buffer);
 		write(1, buffer, len);
-		numOfchar += len;
+		*numOfchar += len;
 	}
 
 }
