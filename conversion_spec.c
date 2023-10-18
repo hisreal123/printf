@@ -10,45 +10,22 @@
  */
 
 void conversion_spec(const char *format, va_list argList, int *numOfchar)
-{
-	int st_len, num, len;
-	char *st, c;
-	
-	if (*format == '%')
+{	
+	if (!*format)
+		return;
+	else if (*format == '%')
 		*numOfchar += write(1, format, 1);
-
-	if (*format == 'c')
+	else if (*format == 'c')
+		print_char(argList, numOfchar);
+	else if (*format == 's')
+		print_string(argList, numOfchar);
+	else if (*format == 'd' || *format == 'i')
+		print_int(argList, numOfchar);
+	else if (*format == 'b')
+		print_binary(argList, numOfchar);
+	else
 	{
-		c = va_arg(argList, int);
-
-		*numOfchar += write(1, &c, 1);
-	}
-
-	if (*format == 's')
-	{
-		st = va_arg(argList, char *);
-		st_len = strlen(st);
-
-		*numOfchar += write(1, st, st_len);
-	}
-
-	if (*format == 'd' || *format == 'i')
-	{
-		char buffer[12];
-	
-		num = va_arg(argList, int);
-		len = _itoa(num, buffer);
-		write(1, buffer, len);
-		*numOfchar += len;
-	}
-
-	if (*format == 'b')
-	{
-		char buffer[32];
-
-		num = va_arg(argList, int);
-		len = _itoa_binary(num, buffer);
-		write(1, buffer, len);
-		*numOfchar += len;
+		*numOfchar += write(1, format - 1, 1);
+		*numOfchar += write(1, format, 1);
 	}
 }

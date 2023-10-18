@@ -9,13 +9,31 @@
 
 int _itoa_binary(int num, char *buffer)
 {
-	int i, left, right = 0;
+	int i = 0;
+	unsigned int temp_num = (unsigned int)num;
+	int left, right = 0;
 	char temp;
-	do {
+
+	if (num < 0)
+	{
+		buffer[i++] = '1';
+		temp_num = -(unsigned int)num;
+
+		do {
+		buffer[i++] = (temp_num & 1) + '0';
+		num >>= 1;
+	} while (num > 0);
+	}
+
+	else
+	{
+		do {
 		buffer[i++] = (num & 1) + '0';
 		num >>= 1;
 	} while (num > 0);
 
+	}
+	
 	left = 0;
 	right = i - 1;
 

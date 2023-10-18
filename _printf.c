@@ -19,19 +19,15 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			write(1, format, 1);
-			numOfchar++;
+			numOfchar += write(1, format, 1);
 		}
 		else
 		{
 			format++;
-
-			if (*format != '\0')
-				conversion_spec(format, argList, &numOfchar);
-			else
-				break;
+			conversion_spec(format, argList, &numOfchar);
 		}
-			format++;
+		
+		format++;
 	}
 	va_end(argList);
 	return (numOfchar);
