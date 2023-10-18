@@ -10,7 +10,7 @@
  */
 
 void conversion_spec(const char *format, va_list argList, int *numOfchar)
-{	
+{
 	if (!*format)
 		return;
 	else if (*format == '%')

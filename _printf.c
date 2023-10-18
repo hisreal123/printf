@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			format++;
 			conversion_spec(format, argList, &numOfchar);
 		}
-		
+
 		format++;
 	}
 	va_end(argList);

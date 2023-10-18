@@ -33,7 +33,7 @@ int _itoa_binary(int num, char *buffer)
 	} while (num > 0);
 
 	}
-	
+
 	left = 0;
 	right = i - 1;
 
