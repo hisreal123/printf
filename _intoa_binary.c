@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _itoa_binary - function to change number to bin
+ * _intoa_binary - function to change number to bin
  * @num: number to be changed
  * @buffer: array
  * Return: length

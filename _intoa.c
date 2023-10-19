@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _itoa - function to print number string
+ * _intoa - function to print number string
  * @num: number
  * @buffer: buffer
  * Return: length of numbers
