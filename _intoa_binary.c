@@ -7,7 +7,7 @@
  * Return: length
  */
 
-int _itoa_binary(int num, char *buffer)
+int _intoa_binary(int num, char *buffer)
 {
 	int i = 0;
 	unsigned int temp_num = (unsigned int)num;

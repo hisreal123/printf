@@ -18,9 +18,7 @@ int _printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format != '%')
-		{
 			numOfchar += write(1, format, 1);
-		}
 		else
 		{
 			format++;

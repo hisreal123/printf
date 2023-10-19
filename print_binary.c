@@ -13,7 +13,7 @@ void print_binary(va_list argList, int *numOfchar)
 	int num, len;
 
 	num = va_arg(argList, int);
-	len = _itoa_binary(num, buffer);
+	len = _intoa_binary(num, buffer);
 	write(1, buffer, len);
 	*numOfchar += len;
 }

@@ -8,7 +8,7 @@
  * Return: length of numbers
  */
 
-int _itoa(int num, char *buffer)
+int _intoa(int num, char *buffer)
 {
 	int i = 0;
 	int is_neg = 0;

@@ -36,10 +36,16 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
-	len = _printf("%b\n", 98);
-	len2 = printf("%b\n", 98);
-	_printf("Len:[%d]\n", len);
-        printf("Len:[%d]\n", len2);
+	_printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
+	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+	printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+	_printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
+	_printf("%");
+	_printf("%!\n");
+	_printf("%K\n");
+	_printf("%r", "\nThis sentence is retrieved from va_args!");
+	_printf("Complete the sentence: You %r nothing, Jon Snow.\n", "");
+	_printf("%p", (void *)0x7fff5100b608);
+	_printf("%d", INT_MIN);
 	return (0);
 }
-

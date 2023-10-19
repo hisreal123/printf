@@ -17,12 +17,12 @@ void print_int(va_list argList, int *numOfchar)
 	if (num == INT_MIN)
 	{
 		buffer[0] = '-';
-		len = _itoa(-(num / 10), buffer + 1);
+		len = _intoa(-(num / 10), buffer + 1);
 		buffer[len] = '0' + (-(num % 10));
 		len++;
 	}
 	else
-		len = _itoa(num, buffer);
+		len = _intoa(num, buffer);
 
 	write(1, buffer, len);
 	*numOfchar += len;
