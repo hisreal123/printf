@@ -12,7 +12,7 @@
 void conversion_spec(const char *format, va_list argList, int *numOfchar)
 {
 	if (format == NULL)
-		return;
+		*numOfchar += write(1, format - 1, 1);
 	else if (*format == '%')
 		*numOfchar += write(1, format, 1);
 	else if (*format == 'c')
